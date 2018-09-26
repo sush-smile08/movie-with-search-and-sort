@@ -1,0 +1,45 @@
+<div class="container wrpper">
+  <div class="row">
+    <div class="col-md-5">
+      <input type="text" [(ngModel)]="searchText" 
+      class="form-control" placeholder="Search By Title" />
+    </div>
+    <div class="col-md-7">
+      <ul>
+        <li class="pointer"><b>Sort By -</b></li>
+        <li class="pointer" (click)="sort('rating')">Rating</li>
+        <li class="pointer" (click)="sort('titleYear')" > Title Year</li>
+        <li class="pointer" (click)="sort('language')" > Language </li>
+        <li class="pointer" (click)="sort('country')" > Country </li>
+      </ul>
+    </div>
+  </div>
+  <div class="movie-wrapper row">
+    <div class="col-md-9 col-sm-12">
+      <ul *ngFor="let app of appsName 
+      | orderBy: {property: column, direction: direction}
+      | searchfilter:searchText 
+      | paginate: { itemsPerPage: 3, currentPage: p}" 
+      class="movie-list">
+        <li></li>
+        <li class="movie-img"><span>{{app.movie_title}}</span></li>
+        <li><b>Tittle: {{app.movie_title}}</b></li>
+        <li><b>Director: </b> {{app.director_name}}</li>
+        <li><b>Cast: </b> {{app.actor_1_name}} , {{app.actor_2_name}}</li>
+        <li><b>Genres: </b> {{app.genres}}</li>
+        <li><b>Language: </b> {{app.language}}</li>
+        <li><b>Country: </b> {{app.country}}</li>
+        <li><b>Rating: </b> <span  id="rating">{{app.content_rating}}</span></li>
+        <li><b>Budget: </b> {{app.budget}}</li>
+        <li><b>Year: </b> {{app.title_year}}</li>
+        <li><b>Plot: </b> {{app.plot_keywords}}</li>
+        <li><b>IMBD Link: </b> <a target="_blank" href="{{app.movie_imdb_link}}">{{app.movie_imdb_link}}</a></li>
+        <li *ngIf="(appsName | searchfilter: stringFilter).length === 0">No matches found</li> 
+      </ul>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+  <!-- https://moviemania-612cb.firebaseapp.com/ -->

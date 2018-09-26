@@ -1,0 +1,14 @@
+.navbar{
+    background: url('https://coverfiles.alphacoders.com/533/53392.jpg');
+    background-position: center 75%;
+    background-repeat: no-repeat;
+}
+.navbar-dark .navbar-brand {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    font-style: italic;
+    text-shadow: 5px 5px 10px #000;
+}

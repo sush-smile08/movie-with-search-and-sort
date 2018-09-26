@@ -1,0 +1,7 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '../node_modules/font-awesome/css/font-awesome.css';
+body{
+    padding: 100px 50px;
+    background: url(https://flashbak.com/wp-content/uploads/2014/07/collage-copy.jpg);
+    background-size: cover;
+}

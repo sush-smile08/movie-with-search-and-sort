@@ -1,0 +1,23 @@
+footer.fixed-bottom{
+    background: url('http://signifi.com/wp-content/uploads/dvd_gamer_header.png');
+    background-position: center 90%;
+    position: fixed;
+    height: 50px;
+}
+p{
+    color: #fff;
+    background: #000;
+    opacity: 0.9;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+}
+
+@media screen and (max-width: 767px){
+    p.text-center {
+        font-size: 12px;
+    }
+}
